@@ -1,0 +1,956 @@
+<<!DOCTYPE html5>
+<!-- Comentarios -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="D:\2020\PROGRAMACIONWEB\ProjectWeb\codecss\style.css"  media="screen"/>
+    <link rel="stylesheet" href="D:\2020\PROGRAMACIONWEB\ProjectWeb\codecss\maquetacion.css">
+    <base href="D:\2020\PROGRAMACIONWEB\ProjectWeb" target="_blank"/>
+
+    <title>Contenido Html</title>
+
+    <!-- Esta es la forma de escribir CSS interno y que se aplica para a cada uno de los elementos que contiene la pàgina web-->
+    <style media="screen">
+     /* body{background-color: RGBA(255,255,240,0.3);font-family: verdana;} */
+     h1{background-color: #ABF59B; font-size: 2vw}
+
+     td { text-align: center;}
+     table#tipo1,th, td{ border: 1px solid gray;border-collapse: collapse;background-color: #70A0FF; text-align: center;color:#202224}
+     table#tipo2{ border: 3px solid gray;text-align: center;}
+     .fondo{background-color: #909090}
+     .letra{color:#70A0FF; font-size: 16px; text-align: center;display: inline;}
+     .cities{background-color: lightgray;color: white;margin:20px;padding:20px;}
+     .tableBtn{padding: 10px ;background-color: lightgray}
+     .autor{}
+       #divone,#divtwo,#divthree,#divfour,#divfive {
+        width: 150px;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid black;
+        float:left;
+        margin: 10px;
+      }
+      #divstorage {
+       width: 150px;
+       height: 230px;
+       padding: 10px;
+       border: 1px solid black;
+       float:left;
+       margin: 10px;
+     }
+      #divclear{clear: both}
+     .fondoMorado{background-color: #4B2E57;
+           color:white;
+           width:100%;
+           padding:10px"
+
+          }
+     .h1form{color: #4B2E57; background-color: #70A0FF}
+     .fondoazul{background-color: #70A0FF;
+           color:#171515;
+           width:100%;
+           padding:20px"
+          }
+     .h1fondoazul{color: #70A0FF; background-color: #4B2E57}
+     span.note{font-size: 120%; color: red}
+     span.resalte{color:#70A0FF;font-weight:bold}
+     span.resalte2{color:#4B2E57;font-weight:bold}
+    </style>
+  </head>
+  <body class="lessonhtml">
+      <div id="contenedor">
+    <!--Encabezado y pàrrafo introductorio -->
+    <h1 id="inicio" style="color:DodgerBlue;background-color:#4B2E57"> <img src="ProjectWeb\imagenes\banner1.png" alt="Banner inicial" width="100%"> </h1>
+    <p>Link a una seccion de la pàgina abajo <a href="#LinkDown">Click Aquì</a> </p>
+    <p>Link a una seccion de la pàgina  <span class="resalte">Atributos de un formulario</span> <a href="#atform">Click Aquì</a> </p>
+    <p>Link a una seccion de otra pàgina de este mismo proyecto  <a href="ScreenPrint.html#LinkDown" target="_blank">Go there</a> </p>
+    <p id="p01">En este espacio irè desarrollando cada uno de las conceptos y ejemplos de los elementos que hacen parte de este entrenamiento, el objetivo es que
+      entre el 30 de abril de 2020 y el 15 de mayo de 2020 con jornadas de entrenamiento de por lo menos 6 horas diarias, con la excepciòn del domingo, afianzar estas
+      habilidades. Y luego evaluo, puesto que el propòsito de todo esto es tomar parte de esta industria de TI que sigue creciendo a pasos agigantados.</p>
+    <hr>
+    <!-- ......... -->
+    <div class="fondoazul">
+      <h1 class="h1fondoazul">MODELO DE OBJETOS DEL DOCUMENTO (DOM)</h1>
+      <a href="https://www.w3.org/2005/03/DOM3Core-es/introduccion.html" target="_blank" style="color:#4B2E57; font-size:12px">Modelo de Objetos de documento. w3.org</a>
+      <div class="fondoMorado">
+        <p>El Modelo de Objetos del Documento (DOM) es una interfaz de programación de aplicaciones <span class="resalte">(API)</span>  para documentos validos
+          <span class="resalte">HTML</span> y bien construidos <span class="resalte">XML</span>. Define la estructura lógica de los documentos y el modo en que se
+          accede y manipula.</p>
+      </div>
+    </div>
+    <hr>
+    <div class="fondoazul">
+      <h1 class="h1fondoazul">API SSE</h1>
+      <p>Eventos enviados por el servidor (server-sent event)</p>
+      <a href="https://developer.mozilla.org/es/docs/Server-sent_events/utilizando_server_sent_events_sse">Documentacoòn MDN</a>
+
+    </div>
+
+    <hr>
+    <div class="fondoMorado">
+      <h1 class="h1form">Web Workers</h1>
+      <a href="https://developer.mozilla.org/es/docs/Web/API/Web_Workers_API" target="_blank" style="color:white; font-size:12px">web Workesr. MDN WEB DOC</a>
+      <p>Los <b>Web Workers</b>  hacen posible ejecutar la operación de un script en un hilo en segundo plano separado de la ejecución el hilo principal de la aplicación web.
+         La ventaja de esto es que un proceso laborioso puede actuar en un hilo separado, permitiendo al hilo principal (normlamente la UI) ejecutarse sin ser bloqueado
+          o ralentizado.</p>
+          <h2 class="h1form">Concepto y uso</h2>
+          <p>Un worker es un objeto que se crea a través del constructor ( <b style="color:#70A0FF"> Worker()</b> ) este ejecuta un archivo javascript — este fichero
+             contiene los scripts que se van a ejecutar en el hilo del worker; los workers se ejecutan en un contexto global diferente al actual del navegador window.
+             Este contexto está representado por el objeto <b style="color:#70A0FF"> DedicatedWorkerGlobalScope</b> en el caso de los workers dedicados (los workers
+             standard utilizan un solo script; y los shared workers usan <b style="color:#70A0FF">SharedWorkerGlobalScope</b>).</p>
+             <h2>Ejemplo de creacion y uso de un web worker</h2>
+             <a href="http://mdn.github.io/simple-web-worker/" style="color:white">Example MDN</a>
+    </div>
+    <hr>
+    <div class="fondoMorado">
+      <h1 class="h1form"> API de almacenamiento web HTML</h1>
+      <a href="https://developer.mozilla.org/es/docs/Web/API/API_de_almacenamiento_webe" target="_blank" style="color:white; font-size:12px">developer.mozilla API WEB</a>
+      <p>Màs info: <a href="https://desarrolloweb.com/articulos/api-html5-webstorage.html" target="_blank" style="color:white; font-size:12px">API HTML5 WebStorage</a> </p>
+      <p>La <b>API de almacenamiento web</b> proporciona los mecanismos mediante los cuales el navegador puede almacenar información de tipo clave/valor, de una forma mucho
+         más intuitiva que utilizando cookies. Los dos mecanismos en el almacenamiento web son los siguentes:</p>
+         <ul>
+           <li> <p><b style="color:#70A0FF">sessionStorage</b> mantiene un àrea de almacenamiento separada para cada origen que està disponible mientras dure la sesiòn de
+             la pàgina (mientras el navegadordor estè abierto, incluyendo recargas de pàgina y reestablecimiento) </p></li>
+             <li> <p><b style="color:#70A0FF">localStorage</b> hace lo mismo, pero persiste incluso cuando el navegador se cierre y se reabra.</p></li>
+         </ul>
+         <p>Estos mecanismos están disponibles mediante las propiedades Window.sessionStorage y  Window.localStorage. Interfaces de almacenamiento Web: <b>Storage,
+           Window y StorageEvent</b> Ejemplo</p>
+              <div class="contenedor">
+               <div class="divone">
+              <form class="" action="index.html" method="post">
+                <fieldset>
+                  <legend >Ejemplo datos almacenados sessionStorage </legend>
+
+                    <label for="datainput">Dato entrada</label>
+                    <input type="text" name="datainput" value="" id="datainput">
+                    <input type="button" name="btnsave" value="Almacenar" id="btnsave" onclick="savedata()">
+                    <input type="button" name="btnshow" value="Mostar" id="btnshow" onclick="showdata()">
+                    <input type="text" name="dataoutput" value="" id="dataoutput" >
+                 </fieldset>
+              </form><br>
+           </div>
+                 <div class="divclear"></div> <!-- Limpieza de contenedores flotantes-->
+             </div>
+               <h2 class="h1form">Click sobre imagen</h2>
+            <table>
+              <tr>
+                <td><img id="imghtml" src="ProjectWeb\imagenes\htmlsvg.svg" alt="Logo html" onclick="clickcounter ('html')"></td>
+                <td><img id="imgjvs" src="ProjectWeb\imagenes\javascriptsvg.svg" alt="Logo javascript" onclick=" clickcounter('Javascript')"></td>
+                <td><img id="imgcss" src="ProjectWeb\imagenes\csssvg.svg" alt="Logo css" onclick="clickcounter('css')"></td>
+              </tr>
+              <tr>
+                <td> <p id="counthtml"> <b></b> </p> </td>
+                <td> <p id="countjvs"> <b></b> </p> </td>
+                <td> <p id="countcss"> <b></b> </p> </td>
+              </tr>
+            </table>
+      </div>
+    <hr>
+    <div class="fondoazul">
+      <h1 class="h1fondoazul">DRAG AND DROG API</h1>
+      <p>Con estos elementos se puede crear el efecto de arrastrar y soltar en HTML</p>
+      <h2 class="h1fondoazul">Arrastra el logo de quibit entre los rectangulos </h2>
+      <p>Recuerda la Limpieza de contenedores flotantes  -div style="clear: both"--/div-  </p>
+
+
+      <div class="" id="divone" ondrop="drop(event)" ondragover="allowDrop(event)">divone</div>
+      <div class="" id="divtwo" ondrop="drop(event)" ondragover="allowDrop(event)">divtwo</div>
+      <div class="" id="divthree" ondrop="drop(event)" ondragover="allowDrop(event)">divthree</div>
+      <div class="" id="divfour" ondrop="drop(event)" ondragover="allowDrop(event)">divfour
+      <img src="ProjectWeb/imagenes/quibit2.png" alt="Logo Quibit" id="drag1" draggable="true" ondragstart="drag(event)" width="140" height="60"></div>
+      <div class="" id="divfive" ondrop="drop(event)" ondragover="allowDrop(event)">divfive </div>
+      <div class="divclear"></div>  <!--   Limpieza de contenedores flotantes-->
+
+
+  </div>
+
+
+<div class="fondoMorado">
+  <h1 class="h1form">GEOLOCALIZACIÒN EN HTML</h1>
+  <p>La API de geolocalizaciòn es utilizada para conocer la posiciòn de un usuario. para ello se utiliza el mètodo  <span class="resalte">getCurrentPosition()</span>
+  Lo que devuelve la latitud y longitud de la posiciòn del usuario. </p>
+<div class="fondoazul">
+  <table style="align-text:center; padding:20px; width:100%" >
+    <tr>
+      <th>Descripciòn</th>
+      <th>Objeto</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Respuesta</th>
+    </tr>
+    <tr>
+      <td><i>Click al botòn para obtener la ubicaciòn del usuario</i></td>
+      <td>  <button type="button" name="button" style="padding:10px" onclick="getLocation()">Current Position</button> </td>
+      <td > <i>Latitud: <p id="latitud"> </p></i>  </td>
+      <td>  <i> Longitud: <p id="longitud"> </p></i>  </td>
+      <td> <i>Exactitud +/- en mts: <p id="answeruser"></p> </i> </td>
+    </tr>
+
+    <tr>
+      <td> <p> <i>Otros metodos de geolocalizaciòn <span class="resalte2">watchPosition()</span> Devuelve la posición actual del usuario y continúa devolviendo
+         la posición actualizada a medida que el usuario se mueve (como el GPS en un automóvil).</i></p></td>
+      <td>  <button type="button" name="button2" style="padding:10px" onclick="watch_Position()">watch Position</button> </td>
+      <td > <i>Latitud: <p id="latitud2"> </p></i>  </td>
+      <td>  <i> Longitud: <p id="longitud2"> </p></i>  </td>
+      <td> <i>Exactitud +/- en mts: <p id="answeruser2"></p> </i> </td>
+    </tr>
+  </table>
+</div>
+</div>
+    <hr>
+    <div class="fondoazul">
+      <h1 class="h1fondoazul">VIDEO EN HTML</h1>
+      <p>Incrustaciòn de un video en html. El video es cortesìa de: <a href="https://peach.blender.org/" target="_blank">Big Buck Bunny</a> </p>
+      <p>El atributo <span class="resalte2">-controls-</span> agrega controles de video, reproducciòn, pusa y volumen. Es recomendable incluir atributos de
+        ancho y alto. El elemento <span class="realte">-source-</span> permite especificar archivos de video alternativo que el navegador puede elegir. Se utilizarà
+        el primer formato conocido y el texto incluido entre las etiquetas de apertura y cierre de video se mostrarìa en el caso que el navefador no soporte ningino de
+        los formato</p>
+      <video src="ProjectWeb/videos/videoejemplo.mp4" width="320" height="240"  controls="controls">
+        <source src="ProjectWeb/videos/videoejemplo.mp4" type="video/">
+      </video>
+      <h1 class="h1fondoazul">VIDEO EN HTML DESDE YOUTUBE</h1>
+      <p>Insertar un video en la pàgina web desde YOUTUBE </p>
+
+      <div  style="margin:auto;">
+        <table style="width:100%">
+          <tr>
+            <td> <h2>Haz una sola cosa</h2>  </td>
+            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/VRd0pWmyh8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+             picture-in-picture" allowfullscreen></iframe></td>
+          </tr>
+          <tr>
+            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/CuxigEwsiv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+            picture-in-picture" allowfullscreen></iframe></td>
+            <td> <h2>Como ser màs eficaz </h2> </td>
+          </tr>
+        </table>
+
+      </div>
+
+      <h1 class="h1fondoazul">AUDIO EN HTML</h1>
+      <p>Para reproducir un audio en html se utiliza la etiqueta <span>-audio-</span> </p>
+      <audio src=""  controls>
+        <source src="" type="audio/mp3">
+      </audio>
+    </div>
+    <div class="fondoMorado">
+      <h1 class="h1form">GRÀFICOS DE LIENZO EN HTML</h1>
+      <p>El elemento <span class="resalte">-canvas-</span> HTML se usa para dibujar gráficos en una página web. El elemento <span class="resalte">-canvas-</span>
+         se utiliza para dibujar gráficos utilizando còdigo JavaScript. Un lienzo es un área rectangular en una página HTML. Por defecto, un lienzo no tiene borde
+         ni contenido.</p>
+      <canvas id="lienzoone" width="700" height="100" style="border:1px solid #E6E6E6;background:white">Lienzo one</canvas><br>
+      <button type="button" name="button" onclick="drawlienzoline()">Dibujar lìnea y cìrculo</button>
+      <button type="button" name="button" onclick="drawletter()">Dibujar letra</button>
+      <button type="button" name="button" onclick="drawfill()">Rellenar Cìrculo</button>
+
+      <h2 class="h1form">DIBUJAR UNA IMAGEN EN CANVAS</h2>
+      <canvas id="lienzotwo" width="240" height="120" style="border:1px solid #d3d3d3;background:white;color:black">Lienzo one</canvas>
+      <img id="logoQ" src="ProjectWeb/imagenes/quibit2.png" alt="Logo Quibit" width="200" height="100"><br>
+      <button type="button" name="button" onclick="functionName()">Dibujar imagen en lienzo</button>
+      <p><span class="resalte">Nota de pràctica:</span> La imagen se dibuja (en tamaño) de acuerdo a su resoluciòn.  </p>
+      <h2 class="h1form">GRÀFICOS SVG</h2>
+      <p>Los elementos <span class="resalte">-SVG-</span> son contenedores para dibujar gràficos <b>SVG</b>.  El cual contiene varios mètodos para dibujar trazados,
+        circulos, textos e imàgenes gràficas</p>
+        <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" stroke="#ABF59B" stroke-width="4" fill="#E6E63C" />
+        </svg>
+        <p>Ejemplo de un texto escrito utilizando -SVG-</p>
+        <svg height="30" width="200">
+          <text x="0" y="15" fill="yellow">Training HTML</text>
+        </svg><br><br>
+        <p>Imagen creada en corel como SVG y cargada en la pàgina HTML</p>
+        <img src="ProjectWeb\imagenes\graphsvg.svg" alt="Gràfico svg"><br>
+    </div>
+    <hr>
+<div class="fondoazul">
+  <h1 class="h1fondoazul">ATRIBUTOS DE ENTRADA EN HTML</h1>
+  <p>A continuaciòn, un ejemplo del uso de los diferentes atributos de entrada en html</p>
+
+<ol><!--Lista de atributos de entrada en html -->
+  <li> <p>El atributo <span class="resalte2"> -value-</span> especifìca un valor inicial para un campo de entrada: <span class="resalte2">input type="text" id="name"
+        name="name" value="Cesar"</span> </p>
+  </li>
+  <li> <p>El atributo <span class="resalte2"> -multiple-</span> especifica que el usuario puede ingresar más de un valor en un campo de entrada:
+          <span class="resalte2">input type="file" id="files" name="files" multiple</span> </p>
+    <form class="form">
+      <label for="files">Seleccionar archivos:</label>
+      <input type="file" id="files" name="files" multiple>
+    </form>
+  </li>
+    <li> <p>El atributo <span class="resalte2"> -pattern-</span> especifica una expresión regular con la que se verifica el valor del campo de entrada cuando se envía
+      el formulario:<span class="resalte2">input type="file" id="files" name="files" multiple</span> El atributo <span class="resalte2">pattern</span>
+        funciona con los siguientes tipos de entrada: texto, fecha, búsqueda, url, tel, correo electrónico y contraseña.</p>
+    <form class="form">
+      <label for="codigoPais">Còdigo Paìs:</label>
+      <input type="text" id="codigoPais" name="codigoPais" pattern="[A-Za-z]{3}" title="tres letras còdigo paìs">
+    </form>
+  </li>
+  <li> <p>El atributo <span class="resalte2"> -placeholder-</span> especifica una pista breve que describe el valor esperado de un campo de entrada (un valor de muestra
+    o una breve descripción del formato esperado): <span class="resalte2"> input type="tel" id="telefono" name="telefono"placeholder="304-5316565"</span>. La pista
+    breve se muestra en el campo de entrada antes de que el usuario ingrese un valor. El atributo <span class="resalte2">placeholder</span> funciona con los siguientes
+     tipos de entrada: texto, búsqueda, url, tel, correo electrónico y contraseña.</p>
+  <form class="form">
+    <label for="numbertel">Ingrese nùmero de telèfono :</label>
+    <input type="text" id="numbertel" name="numbertel" placeholder="304-5316565" title="Nùmero de telèfono" pattern="[3-5]{3}-[0-9]{7}" style="padding:10px;">
+  </form>
+</li>
+<li> <p>El atributo <span class="resalte2"> -required-</span> especifica que se debe completar un campo de entrada antes de enviar el formulario:
+    <span class="resalte2"> input type="text" id="username" name="username" required="required" </span>.
+    El atributo <span class="resalte2">required</span> funciona con los siguientes tipos de entrada: texto, búsqueda, url, teléfono, correo electrónico, contraseña,
+    selectores de fecha, número, casilla de verificación, radio y archivo.
+    <form class="form">
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" id="username" name="username" required="required">
+    </form>
+</li>
+<li> <p>El atributo <span class="resalte2"> -autofocus-</span> especifica que un campo de entrada debería enfocarse automáticamente cuando se carga la página:
+    <span class="resalte2"> input type="text" id="fname" name="fname" autofocus </span>. A continuacòn un ejemplo para enfocar en el campo de entrada nombre cuando
+    se carga la pàgina</p>
+    <form class="form" action="http://localhost/TrainingHCJ/intro/index.php">
+      <fieldset style="width:45%">
+      <legend>Datos Usuario</legend>
+      <label for="name">Nombres:</label>
+      <input type="text" id="name" name="name" >
+      <label for="lastname">Apellidos:</label>
+      <input type="text" id="lastname" name="lastname" >
+      <input type="submit" id="btnenviar" name="btnenviar" value="Enviar">
+      </fieldset>
+    </form>
+</li>
+<li> <p>El atributo <span class="resalte2"> -autocomplete-</span> especifica si un formulario o un campo de entrada debe tener autocompletado activado o desactivado:
+    <span class="resalte2"> form action="quibit.php" autocomplete="on" </span>. Autocompletar permite al navegador predecir el valor.
+    Cuando un usuario comienza a escribir en un campo, el navegador debe mostrar opciones para completar el campo, en función de los valores escritos anteriormente.
+    El atributo <span class="resalte2">autocomplete</span> funciona con -form-y los siguientes -input- tipos: texto, búsqueda, url, tel, correo electrónico, contraseña,
+    fechadores, rango y color.</p>
+    <form class="form" autocomplete="on" action="http://localhost/TrainingHCJ/intro/index.php">
+      <fieldset style="width:45%">
+      <legend>Datos Usuario</legend>
+      <label for="name">Nombres:</label>
+      <input type="text" id="name" name="name" >
+      <label for="lastname">Apellidos:</label>
+      <input type="text" id="lastname" name="lastname" >
+      <input type="submit" id="btnenviar" name="btnenviar" value="Enviar">
+      </fieldset>
+    </form>
+</li>
+</ol><!-- Cierre lista de atributos de entrada en html  -->
+</div>
+
+    <hr>
+<div class="fondoMorado">
+  <h1 class="h1form">FORMULARIOS EN HTML</h1>
+  <p>Un formulario se utiliza principalmente para obtener informaciòn de entrada del usuario.</p>
+<table  style="width:100%;padding:20px">
+  <tr>
+    <th>Elemento</th>
+    <th>Descripciòn</th>
+
+  </tr>
+  <tr>
+    <td> form </td>
+    <td>El elemento < <span  style="color: white">  form </span> > HTML define un formulario que se utiliza para recopilar la entrada del usuario</td>
+  </tr>
+  <tr>
+    <td> input </td>
+    <td>El elemento < <span  style="color: white">  input </span> > HTML define defne los tipos de entrada de datos del usuario y estos pueden ser de varios tipos. <br> Ejemplos: <span>-input type = "text" :Define un campo de entrada de texto de una sola línea.- <br>input type = "radio": Define un botón de radio (para seleccionar una de muchas opciones) <br>input type = "submit": Define un botón de envío (para enviar el formulario) </span> </td>
+  </tr>
+</table>
+
+<p> El atributo <span class="resalte"> <b>action </b> </span> de un formulario define la acciòn que se realizarà al enviar un formulario. Para el siguiente ejemplo este
+   valor es: <span style="color:#70A0FF"> <b>action="index.html target="_blank" method="get" </b> </span> </p>
+<p>El atributo <span class="resalte"> <b>target</b> </span> especifica si el resultado enviado se abrirá en una nueva pestaña del navegador, un marco o en la ventana
+  actual. El valor predeterminado es " _self", lo que significa que el formulario se enviará en la ventana actual. Para que el resultado del formulario se abra en una
+   nueva pestaña del navegador, use el valor " _blank". </p> <p>El atributo  <span class="resalte">  <b>method</b> </span> especifica el método HTTP ( GET o POST )
+     que se utilizará al enviar los datos del formulario.</p> <p>Ejemplos de campos de <span class="resalte"> <b>Text</b> </span> para que el usuario digite informaciòn</p>
+
+<ul><!-- Lista elementos de un formulario-->
+  <li> <p>Elemento <span class="resalte">Text</span> </p>
+    <div class="" style="border:1; border-color:white">
+    <form class="form" action="index.html" method="post">
+    <label for="inputName">Nombres</label>
+    <input type="text" name="inputName" id="inputName">
+    <label for="inputLastName"> Apellidos</label>
+    <input type="text" name="inputLastName" id="inputLastName">
+    <input type="button" name="btnEnviar" value="Enviar">
+    </form>
+  </div>
+ </li>
+ <li><p>Elemento <span class="resalte">RadioButton</span> </p>
+   <p>Ejemplos de campos <span class="resalte"> <b>RadioButton</b> </span>   para que el usuario digite informaciòn</p>
+   <form  >
+     <input type="radio" id="male" name="gender" value="male">
+     <label for="male">Male</label><br>
+     <input type="radio" id="female" name="gender" value="female">
+     <label for="female">Female</label><br>
+     <input type="radio" id="other" name="gender" value="other">
+     <label for="other">Other</label>
+   </form>
+ </li>
+<li><p>Elemento <span class="resalte">Listas Desplegables</span></p>
+  <p>Las listas desplegables se crean con la etiqueta <span class="resalte"> select</span>. Para seleccionar un valor por defecto se utiliza el atributo
+      <span class="resalte"> selected</span>. A continuaciòn un ejemplo:</p>
+  <select name="listaCursos" >
+    <option value="">HTML</option>
+    <option value="">CSS</option>
+    <option value="">JAVASCRIPT</option>
+  </select>
+  <p>Lista utilizando optgroup</p>
+  <select class="" name="">
+    <optgroup label="Lista de cursos entrenamiento">
+      <option value="">HTML</option>
+      <option value="">CSS</option>
+      <option value="">JAVASCRIPT</option>
+      <optgroup label="Otro entrenamiento" >
+        <option value="">BOOTSTRAP</option>
+        <option value="">PHP</option>
+        <option value="">PHYTON</option>
+      </optgroup>
+    </optgroup>
+  </select>
+</li>
+<li><p>Elemento <span class="resalte">TextArea</span></p>
+    <textarea name="message" rows="5" cols="60">Training Fullstack :) </textarea>
+</li>
+<li><p>Elementos <span class="resalte">-fieldset- y -legend-</span></p>
+    <p>La etiqueta <span class="resalte">-fieldset-</span> es utilizada para agrupar datos relacionados en un formulario. Por su parte,
+    la etiqueta <span class="resalte">-legend-</span> define un titulo para el elemento <span class="resalte">-fieldset-</span> </p>
+  <fieldset style="width:47%; height:7%">
+    <legend >Formulario de entrada</legend>
+    <div class="" style="text-align:center">
+    <form class="form" action="index.html" method="post">
+      <label for="inputName">Nombres</label>
+      <input type="text" name="inputName" id="inputName">
+      <label for="inputLastName"> Apellidos</label>
+      <input type="text" name="inputLastName" id="inputLastName">
+      <input type="button" name="btnEnviar" value="Enviar" style="width:90px">
+    </form>
+    </div>
+  </fieldset>
+</li>
+<li><p>Elemento <span class="resalte">-datalist-</span></p>
+  <p>El elemento  <span class="resalte">-datalist-</span> especifica una lista de opciones predefinidas para un elemento <span class="resalte">-input-</span> .</p>
+  <form action="index.html">
+    <input list="Libros">
+    <datalist id="Libros">
+      <option value="El alquimista">
+      <option value="Brida">
+      <option value="La quinta montaña">
+      <option value="Veronika decide morir">
+      <option value="Las valkirias">
+    </datalist>
+  </form>
+</li>
+
+<li><p>Algunos tipos de entradas <span class="resalte">-input-</span> admitidos en html</p>
+
+  <table class="form" style="width:30%; font-family:arial">
+    <tr>
+      <th>input</th>
+      <th>input</th>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+          input type="button" <br>
+          input type="checkbox"<br>
+          input type="color"<br>
+          input type="date"<br>
+          input type="datetime-local"<br>
+          input type="email"<br>
+          input type="file"<br>
+          input type="hidden"<br>
+          input type="image"<br>
+          input type="month"<br>
+          input type="number"<br>
+          </td>
+         <td style="text-align:left">
+          input type="password"<br>
+          input type="radio"<br>
+          input type="range"<br>
+          input type="reset"<br>
+          input type="search"<br>
+          input type="submit"<br>
+          input type="tel"<br>
+          input type="text"<br>
+          input type="time"<br>
+          input type="url"<br>
+          input type="week"<br>
+        </td>
+  </tr>
+  </table>
+</li>
+<li><p>Entrada de campo contraseña <span class="resalte">-password-</span> </p>
+
+
+</li>
+<fieldset style="width:50%; height:7%" >
+  <legend style="color:#70A0FF;">Datos Usuario</legend>
+  <div class="" style="text-align:center">
+  <form class="form" action="index.html" method="post">
+    <label for="inputUser">Usuario</label>
+    <input type="text" name="inputUser" id="inputUser">
+    <label for="inputLastPsw"> Contraseña</label>
+    <input type="password" name="inputLastPsw" id="inputLastPsw">
+    <input type="button" name="btnEnviar" value="Ingresar" style="width:90px">
+  </form>
+  </div>
+</fieldset>
+<li><p>Mensaje en un alert <span class="resalte">-alert()-</span> </p>
+  <input type="button" onclick="alert('Training html, css y javascript! Go there!!!')" value="Click Me!">
+</li>
+</ul><!--Cierre Lista elementos de un formulario-->
+  <p>Lista de atributos de un elemento form </p>
+  <img src="ProjectWeb/imagenes/listaatributosform.png" alt="Lista atributos Form">
+</div>
+
+<div class="fondoazul">
+  <h1 class="h1fondoazul" id="atform">ATRIBUTOS DE FORMULARIOS DE ENTRADA EN HTML</h1>
+  <p>A continuaciòn, un ejemplo del uso de los diferentes atributos de entrada en html</p>
+
+<ol><!--Lista de atributos de entrada en html -->
+  <li> <p>El atributo <span class="resalte2"> -form-</span> especifica a que formulario pertenece un elemento <span class="resalte2">input</span>.
+    El valor de este atributo debe ser igual al atributo id del elemento <span class="resalte2">form</span> al que pertenece.
+      <span class="resalte2">Se puede tener un campo de entrada ubicado fuera del formulario HTML (pero que sigue siendo parte del formulario)</span> Ejemplo:</p>
+        <fieldset style="width:50%">
+          <legend>Formulario X</legend>
+          <form action="http://localhost/TrainingHCJ/intro/index.php" id="formularioX" target="_blank">
+          <label for="name">Nombres:</label>
+          <input type="text" id="name" name="name">
+          <input type="submit" value="Submit">
+          </form>
+        </fieldset>
+          <br>
+          <label > <b> <i>Este campo pertenece al formulario X --></i> </b> </label>
+          <label for="lastname">Apellidos:</label>
+          <input type="text" id="lastname" name="lastname" form="formularioX">
+  </li>
+  <li> <p>El atributo <span class="resalte2"> -formaction-</span> especifica la URL del archivo que procesará la entrada cuando se envíe el formulario:
+        <span class="resalte2">input type="submit" formaction="/action_index.php" value="Enviar como Admin"</span> Este atributo anula el atributo <b>action</b>
+        del elemento <b>-form-</b> El atributo <b>formaction</b> funciona con los siguientes tipos de entrada: <b>enviar e imagen.</b> </p>
+        <fieldset style="width:60%">
+          <legend> <b>Datos de entrada usuario</b> </legend>
+          <form action="http://localhost/TrainingHCJ/intro/index.php" id="formularioX" target="_blank">
+          <label for="name">Nombres:</label>
+          <input type="text" id="name" name="name">
+          <label for="lastname">Nombres:</label>
+          <input type="text" id="lastname" name="lastname">
+          <input type="submit" value="Enviar">
+          <input type="submit" value="Enviar como administrador" formaction="http://localhost/TrainingHCJ/intro/index2.php">
+
+          </form>
+        </fieldset>
+  </li>
+  <li> <p>El atributo <span class="resalte2"> -formenctype-</span> especifica cómo deben codificarse los datos del formulario cuando se envían (solo para formularios
+          con  <b>method = "post"</b> ): <span class="resalte2">input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data"</span>
+          Este atributo anula el atributo <b>action</b> del elemento <b>-form-</b> El atributo <b>formenctype</b> funciona con los siguientes tipos de entrada:
+           <b>enviar e imagen.</b> </p>
+        <fieldset style="width:60%">
+          <legend> <b>Datos de entrada usuario</b> </legend>
+          <form action="http://localhost/TrainingHCJ/intro/index.php" id="formularioX" target="_blank" method="post">
+          <label for="name">Nombres:</label>
+          <input type="text" id="name" name="name">
+          <label for="lastname">Nombres:</label>
+          <input type="text" id="lastname" name="lastname">
+          <input type="submit" value="Enviar">
+          <input type="submit" value="Enviar multipart/from-data" formenctype="multipart/form-data">
+          </form>
+        </fieldset>
+  </li>
+</ol><!-- Cierre lista de atributos de entrada en html  -->
+</div>
+
+<hr>
+<h1>ETIQUETAS SEMÀNTICAS EN HTML</h1>
+<p>Son las etiquetas utilizadas y que dan significado a las partes de un documento. Es decir,  <span style="color:blue">el nombre de la etiqueta permite determinar
+  su contenido</span> y son entendible tanto por los navegadores como por los desarrolladores.</p <p>En desarrollo web, las etiquetas
+    <span style="color:blue">HEADER, ARTICLE, SECTION, FOOTER, ETC.</span>, sirven para definir el esquema principal del documento, estas etiquetas indican
+    <b> què</b> es el contenido que engloban y cual es su relaciòn con el conjunto de elementos del documento HTML. </p>
+<blockquote cite="https://desarrolloweb.com/articulos/etiquetas-semanticas-html5.html">
+  <q cite="">Existe pues una forma lógica de colocar todos los contenidos dentro de un sitio y unas etiquetas determinadas para contenerlos, atendiendo a la estructura
+            que nosotros queremos comunicar a los sistemas que puedan procesar el documento.</q>
+</blockquote>
+<p> <span style="color:blue"> <b>Nota:</b> </span>  Realmente, las etiquetas estructurales están ahí y nosotros somos los que podemos utilizarlas a nuestro gusto,
+  siempre que respetemos la significación que se les ha dado. Hay discusiones de sobra para interpretarlas de una manera o de otra y para decir cómo deberían ser
+  utilizadas. Podemos usar el sentido común para imaginar lo que pueda o no ser correcto.</p>
+<img src="ProjectWeb/imagenes/TagSemantica.png" alt="Etiquetas Semanticas.">
+<h1>ALGO DE CARACTERES ESPECIALES</h1>
+<p>se pueden utilizar caracteres ascii para caracteres especiasles que se necesiten dentro de una pàgina web. Ej: Guines, tìldes, espacios en blanco
+    irrompibles & nbsp; </p>
+<img src="ProjectWeb/imagenes/entidades.png" alt="Ejemplo entidades en HTML">
+<hr>
+<h1>ELEMENTOS Y TECNICAS DE DISEÑO EN HTML</h1>
+<p>Para construir una pagina web, HTML ofrece varios elementos semànticos con los cuales se pueden definir sus partes</p>
+<img src="ProjectWeb/imagenes/semantica.png" alt="Semàntica de una pàgina web">
+<p>Existen cuatro tècnicas para crear la estructura y diseño de una pagina web en columnas. Cada camino tiene sus pros y contras.</p>
+<table style="border:1">
+  <tr style="border:1">
+    <td>CSS Framework </td>
+    <td>CSS Float Property </td>
+    <td>CSS Flexbox</td>
+    <td>CSS grid</td>
+  </tr>
+</table>
+<p> <b> Utiliza la etiqueta <span style="color: blue"> <b>- picture- </b> </span>  para mostrar diferentes imàgenes dependiendo de los diferentes tamaños de la ventana
+    del navegador.</b> </p>
+<p> <b> Utliza la unidad <span style="color: blue"> <b> "vw" </b> </span>  a una etiqueta de encabezado o pàrrafo para crear texto web responsive. </b> </p>
+<hr>
+<h1>CONFIGURACIÒN DE LA VENTANA GRÀFICA</h1>
+<p>En HTML existe una forma para poder tener el control de la ventana gràfica a travès de la etiqueta < <span style="Color:red">meta</span> > </p>
+<p>la ventana gràfica es el àrea visible del usuario de una pàgina web. Para ello se debe incluir la etiqueta < <span style="Color:red">meta</span> > en todas las
+   pàginas web quw se puedan construir:  </p>
+<img src="ProjectWeb/imagenes/ventanaGrafica.png" alt="Etiqueta meta para control de la ventana gràfica">
+<p>Un elemento -meta- de ventana gràfica proporciona al navegador instrucciones sobre como controlar las dimensiones y las escalas de la pàgina.</p>
+<p>La parte <span style="color:blue">width = device-width</span> establece el ancho de la pàgina para seguir el ancho de la pantalla del dispositivo (que variarà
+  segùn el dispositivo). </p>
+<p>La parte <span style="color:blue">initial-scale = 1.0</span> establece el nivel de zoom inicial cuando el navegador carga por primera vez la página. </p>
+<p> <b>Esto es muy importante para la construcciòn de pàginas web responsive, debido a que se le darà la instrucciòn a los navegadores acerca de còmo controlar
+    las dimensiones de la pàgina de acuerdo al dispositivo donde se vea la pàgina web.</b> </p>
+<hr>
+<h1>Rutas de archivos en HTML</h1>
+<p>En los archivos complementarios (imàgenes, archivos CSS O Javascript, etc) a la construcciòn de un sitio web se pueden utilizar ubicaciones absolutas y relativas</p>
+<h3>Rutas Absolutas</h3>
+<h3>Rutas relativas</h3>
+<p>Las rutas relativas tienen esta estructura: "ProjectWeb\imagenes\ElementosNivelBloque.png".. Esto significa que la imagen se encuentra en una carpeta llamada imagenes dentro
+  del proyecto actual</p>
+<img src="ProjectWeb/imagenes/quibit.png" alt="Logo Quibit" width="200px" height="100px">
+<h2>EL ELEMENTO BASE </h2>
+<p>Ele elemento < <span style="color:red">base</span> > especìfica la base url para todas las url relativas de una pàgina
+  <span style="color:blue">https://www.quiubit.com/ProjectWeb/imagenes/ </span> </p>
+<p> </p>
+<hr>
+<h1>LINEAS DE CODIGO EN JAVASCRIPT</h1>
+<p>Con Javascript se construyen paginas web dinàmicas.</p>
+<table style="width:100%;padding:20px">
+  <tr>
+    <th>BOTÒN</th>
+    <th>ACCION</th>
+    <th>DESCRIPCIÒN</th>
+  </tr>
+  <tr>
+    <td> <button type="button" name="button" onclick="ViewTimeCol()">Mostrar Hora Colombia</button> </td>
+    <td><p id="TimeCol"></p> </td>
+    <td> <p >Al dar click en el boton se muestra la hora estandar de colombia</p> </td>
+  </tr>
+  <tr>
+    <td> <button type="button" name="button" onclick="FormatTimeCol()">Formato a la hora</button> </td>
+    <td><p id="FormatTimeCol" style="fontSize:5px"></p> </td>
+    <td> <p >Copiar y cambiar el formato de la hora seleccionada</p> </td>
+  </tr>
+  <tr>
+  <td> <button type="button" name="button" onclick="clearTime()">Limpiar celda hora</button> </td>
+    <td><p id="clearTime"></p> </td>
+    <td> <p >Limpia la captura de la Hora</p> </td>
+  </tr>
+</table>
+<h1>La etiqueta HTML -noscript-</h1>
+<p>la etiqueta -noscript- se utiliza para proporcionar contenido alternativo para los usuarios que han deshabilitado los script en su navegador o tienen un navegador
+    que no admite script del lado del cliente </p>
+<h3>Un navegador sin soporte para JavaScript mostrará el texto escrito dentro del elemento noscript</h3>
+<hr>
+<h1>IFRAMES EN HTML</h1>
+<p>Los iframes en html se utilizan como un contenedor para mostar otro documento html. Su sintaxis es Un iframe HTML se define con la etiqueta -iframe- :</p>
+<img src="imagenes\iframe.png" alt="Iframe">
+<p>El atributo <span style="color:red">src</span>  especifica la URL (dirección web) de la página de marco en línea.</p>
+<!--<iframe src="https://paulocoelhoblog.com/" width="1355" height="300"></iframe>-->
+<h2 class="fondo letra">Iframe: objetivo de un enlace </h2>
+<p>Un iframe se puede utilizar como un contenedor al que se puede mandar a abrir otra pagina web</p>
+<iframe  name="myIframe"></iframe>
+<p>Vinculo al pagina principal <a href="https://www.quibit.com/" target="myIframe">mostrar pagina</a>  </p>
+<hr>
+<h1>Mis primeras lìneas de còdigo con Javascript</h1>
+<p>En este ejemplo se utiliza el nombe de la clase para realizar ciertas tareas con elementos que contegan elnombre de clase especificado.</p>
+<p>En Javascript se puede acceder a elementos con un nombre de clase especìfico mendiante el uso del mètodo  <span style="color:black;background-color:#ABF59B">getElementsByClassName</span> </p>
+<p>Lista de libros que he leido. Voy a utilizar un boton para esconder los libros de paulo coelho que he leido</p>
+<p>La funciòn style.display acepta estos argumentos: inline, block y  none</p>
+<table style="width:100%; fontSize:16px" class="tableBtn" >
+  <caption> <h2>Lista de Libros </h2> </caption>
+  <tr class="tableBtn">
+    <th>Botones</th>
+    <th>Libro 1</th>
+    <th>Libro 2</th>
+    <th>Libro 3</th>
+    <th>Libro 4</th>
+    <th>Libro 5</th>
+  </tr>
+  <tr class="tableBtn" >
+    <td><button type="button" name="button" onclick="hide()">Ocultar Elementos</button></td>
+    <td rowspan="2" ><h2 class="fondo letra autor">Las Valquirias</h2></td>
+    <td rowspan="2"><h2 class="fondo letra autor">El alquimista</h2></td>
+    <td rowspan="2"><h2 class="fondo letra autor">A orillas del rio piedra me sentè y llorè</h2></td>
+    <td rowspan="2"><h2 class="fondo letra autor">EL camino del arco</h2></td>
+    <td rowspan="2"><h2 class="fondo letra " >Conversaciones con Dios</h2></td>
+  </tr>
+  <tr class="tableBtn">
+   <td><button type="button" name="button" onclick="view()">Mostrar Elementos</button></td>
+  </tr>
+</table>
+
+    <hr>
+    <h1>El atributo class en HTML</h1>
+    <p>El atributo -class- se utiliza para definir estilos iguales para elementos con el  mismo nombre de clase. Ejemplo</p>
+    <div style="background-color: lightgray;color: #70A0FF">
+      <h2>Sic Mundus Creatus Est</h2>
+      <p>El principio es como el final y el final es como el principio</p>
+    </div>
+    <div  style="background-color: lightgray;color: #70A0FF">
+      <h2>La tabla de la esmeralda</h2>
+      <p>El mensaje que contiene mucho del significado es tan sencillo que pudo ser escrito en la suerficie de una esmeralda</p>
+    </div>
+    <p>Utilizaciòn del atributo class en elementos en linea.</p>
+    <h2>Esta es la utilizaciòn <span class="note">de una etiqueta -span-</span> dentro de un encabezado </h2>
+    <h2>MÙLTIPLES CLASES</h2>
+    <p>Un elemento HTML puede pertenecer o utilizar varios atributos <span style="color:red">-class-</span></p>
+      <div class="fondo letra">
+        <h2>SIC MUNDUS CREATUS EST</h2>
+        <p>Como es arriba es abajo, como es adentro es afuera.</p>
+      </div>
+    <hr>
+    <h1>Bloque HTML y elementos en línea</h1>
+    <!-- Utilizaciòn de las etiquetas -div-span- -->
+    <h2>Elementos de Nivel de Bloque</h2>
+    <p>Utilizaciòn de las etiquetas -div-span</p>
+    <p>Un elemento de nivel de bloque siempre comienza en una nueva línea y ocupa todo el ancho disponible (se extiende hacia la izquierda y hacia la derecha tanto
+        como sea posible).</p>
+    <div class="">
+      <img src="ProjectWeb/imagenes/imagenes/ElementosNivelBloque.png" alt="ElementosNivelBloque" width="704" height="142" style="border-color:black border:3">
+    </div>
+    <h2>Elementos de Nivel de Lìnea</h2>
+    <p>Un elemento en lìnea no comienza  en una nueva lìnea y solo ocupa el ancho que sea necesario</p>
+    <img src="ProjectWeb/imagenes/imagenes/ElementosNivelBloque.png" alt="ElementosNivelLinea" width="704" height="142"  style="border-color:gray">
+    <h2>Elemento -div-</h2>
+    <div class="Etiquetadiv" style="background-color:black;color:white;padding:20px;">
+    <div class="" style="Color:yellow"><h2>Los Sueños</h2></div>
+      <p>Son un mundo facscinante que atrapa mi atenciòn. Seguirè dibujando los elementos caracterìsticos de cada drama representado.</p>
+    </div>
+    <h2>Elemento -span-</h2>
+    <h2>Esta es la utilizaciòn <span style="color:red;background-color:white">de una etiqueta -span-</span> dentro de un encabezado </h2>
+    <hr>
+    <h4>Vinculos a pàginas externas</h4>
+    <p><a href="https://www.quibit.co "> Link a Quibit.co</a> Esta es la pagina que se construirà al finalizar una parte de este entrenamiento. </p>
+    <p>Etiqueta para un salto de pàgina -->  br </p>
+    <!-- la etiqueta img funciona para la inserciòn de imàgenes en una pàgina web -->
+    <h4>Inserciòn de una imagen</h4>
+    <p class="test">Etiqueta para insertar una imagen en html</p>
+    <img src="ProjectWeb\imagenes\quibit.png" alt="logo de quibit.co" width="404" height="142">
+    <hr>
+    <!-- la etiqueta <<button type="button" name="button"></button>> funciona para la inserciòn de un boton en una pàgina web -->
+    <h4>Construcciòn de un botòn</h4>
+    <p>Este es un ejemplo de contrucciòn de un botòn en html </p>
+    <button>Click me</button>
+    <button type="button" name="btnMuestra">Botòn de muestra</button><!--Investiga porque sale pequeño este boton -->
+    <hr>
+      <h4>Construcciòn de listas ordenadas y no ordenadas</h4>
+    <p>El siguiente es un ejemplo de listas ordenadas (numeradas) y no ordenadas (viñetas)</P>
+    <<p>A continuaciòn un ejemplo de listas ordenadas</p>
+    <ol>
+      <li>html</li>
+      <li>css</li>
+      <li>Javascript</li>
+    </ol>
+    <<p>A continuaciòn un ejemplo de listas no ordenadas</p>
+    <ul>
+      <li>php</li>
+      <li>phyton</li>
+      <li>boostrap</li>
+    </ul>
+    <hr>
+    <p>Y este es un plus. Es la inserciòn de un reporte que hice utilizando la potente herramienta de Inteligencia de negocios de Power BI</p>
+  <!--  <iframe  width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=a1a168a7-37f8-426c-a0ed-221a18f81ba7&autoAuth=true&ctid=371179b5-c8a0-43be-8083-95bab26bc650&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWNlbnRyYWwtdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="1" allowFullScreen="true"></iframe> -->
+    <hr>
+    <!-- Aquí, title se agrega un atributo al <p> elemento. El valor del atributo de título se mostrará como información sobre herramientas cuando pase el mouse sobre el párrafo -->
+    <p title="This 'is a' tooltip">Informaciòn sobre herramientas. Atributo title de una etiqueta p</p>
+    <p title='John "ShotGun" Nelson'>Nombre extranjero</p>
+    <p>A continuaciòn un ejemplo de los diferentes encabezados y la propiedad font size para cambiar su tamaño </p>
+    <h1 style="font-size:40px;">Este es un encabezado h1 con la propiedad font-size modificada</h1>
+    <h1>Este es un encabezado h1</h1>
+    <h2>Este es un encabezado h2</h2>
+    <h3>Este es un encabezado h3</h3>
+    <h4>Este es un encabezado h4</h4>
+    <h5>Este es un encabezado h5</h5>
+    <h6>Este es un encabezado h6</h6>
+    <hr>
+    <!--jemplo de etiqueta <hr> para un cambio temàtico en en contenido  -->
+    <h1>HTML</h1>
+    <p>HTML is a language for describing web pages.....</p>
+    <hr>
+    <h1>CSS</h1>
+    <p>CSS defines how to display HTML elements.....</p>
+    <p style="color: RGBA(200,0,0,0.6 )">This is a red paragraph.</p>
+    <hr>
+    <!--Ejemplo de etiqueta <pre> para un cambio temàtico en en contenido  -->
+    <pre>al utilizar la etiqueta pre
+    se consigue el siguiente efecto:
+    El texto dentro de una etiqueta (pre)  elemento se muestra en una fuente de ancho fijo (generalmente Courier), y conserva tanto los espacios como los saltos de línea:
+    que se escriben dentro del codigo fuente de la pagina html.
+    </pre>
+    <hr>
+    <h1 style="color:Blue">Utilizaciòn de los atributos style en elementos html: tamaño fuente, color, alineaciòn, etc.</h1>
+    <p style="color:RGBA(200,0,0,0.7)">Este es un pàrrafo de muestra para probar el atributo style </p>
+    <h1 style="font-size:200%;">Tamaño del texto utlizando el atributo font-size con valor porcentual</h1>
+    <p style="text-align:left;color:blue;font-family:arial;">Texto alineado a la izquierda</p>
+    <p style="text-align:center;color:green;font-family:courier;">texto alineado al centro</p>
+    <p style="text-align:right;color:red;font-size:20px;font-family:verdana">texto alineado a la derecha</p>
+    <h1>Elementos de formato HTML</h1>
+      <ul>
+        <li><b>b--> texto en negrita</b> </li>
+        <li><strong>strong --> texto importante</strong> </li>
+        <li> <i>--> texto en cursiva</i></li>
+        <li> <em>em --> texto enfatizado </em></li>
+        <li><mark>mark --> texto marcado</mark></li>
+        <li><small>small --> texto pequeño</small></li>
+        <li><del>del --> texto eliminado</del></li>
+        <li><ins>ins --> texto insertado</ins></li>
+        <li> <sub>sub --> texto del subindice</sub></li>
+        <li><sup>sup --> texto del superindice</sup></li>
+      </ul>
+    <hr>
+    <h1 style="color: black">  <b>ELEMENTOS DE CITAS EN HTML</b>  </h1>
+    <h3>  <i>Etiquetas q, blockquote, abbr, address, cite,bdo</i> </h3>
+    <p>Para realizar citas cortas se utiliza la etiqueta p. A continuaciòn un ejemplo</p>
+    <p>Believe, Build:  <i><q>Build a future where people live in harmony with nature.</q></i> Para este ejemplo el navegador incluye entre comillas el texto incluido
+        dentro de la etiqueta <b>q</b></p>
+      <p>Al utilizar la etiqueta blockquote se define una seccion que se cita de otra fuente. A continuaciòn un ejemplo</p>
+      <p>Here is a quote from WWF's website:</p>
+      <p>Esta es una etiqueta blockquote dentro de un pàrrafo <blockquote cite="http://www.worldwildlife.org/who/index.html">
+          For 50 years, WWF has been protecting the future of nature.The world's leading conservation organization,WWF works in 100 countries and is supported
+          by 1.2 million members in the United States and close to 5 million globally.
+        </blockquote> este es el final del parrafo.</p>
+        <p>Se utiliza la etiquta abbr para las abreviaturas en los textos</p>
+        <p>La <abbr title="Organizacion Mundial de la Salud">OMS</abbr> trabaja arduamente en èpocas del Covid-19. </p>
+        <p>La etiqueta addres para escribir la direcciòn de contacto de la pàgina web</p>
+        <address class=""> Creado por: Cesar Augusto Tapias Sierra <br>Contacto:<a href="https://www.quibit.co">www.quibit.co</a> <br>Cartagena - Colombia <br>130011
+        </address>
+        <hr>
+        <bdo dir="rtl">This text will be written from right to left</bdo>
+        <h1 id="LinkDown" style="background-color:orange;color:black;text-align:center">Colores de fondo de un parrafo o encabezado</h1>
+        <a href="#inicio">Regresar</a>
+        <h3 style="border:1px solid DodgerBlue">A continuaciòn se puede cambiar el borde de un encabezado</h3>
+        <h3 style="border:2px solid yellow">Este es otro borde de un encabezado</h3>
+        <h2 style="border:2px solid violet">Este es otro borde de un encabezado</h2>
+        <h1>En HTML los colores tambièn se pueden especifica utliazando valores RGB, HSL ,HEX, RGBA y HSLA </h1>
+        <p style="background-color:RGB(58,176,32)"> <b>Color RGB (58,176,32)</b> </p>
+        <p style="background-color:RGBA(58,176,32,0.5)"> <b>Igual que el color Color RGBA (58,176,32,0,5) pero con 50% de transparencia</b> </p>
+        <p style="background-color:RGBA(58,176,32,0.3)"> <b>Igual que el color Color RGBA (58,176,32,0,3) pero con 30% de transparencia</b> </p>
+        <p style="background-color:RGBA(58,176,32,0.2)"> <b>Igual que el color Color RGBA (58,176,32,0,2) pero con 20% de transparencia</b> </p>
+        <hr>
+        <h1>Vinculos entre pàginas en HTML</h1>
+        <p>Vìnculo utilizando el target _blank: crea una nueva pestaña/ventana  <a href="paginas.html" target="_blank">Click Aquí</a> </p>
+        <p>Vìnculo utilizando el target _self: sobre la misma ventana/pagina en donde se hace Click  <a href="paginas.html" target="_self">Click Aquí</a> </p>
+        <p>Vìnculo utilizando el target _parent: sobre la misma ventana/pagina en donde se hace Click  <a href="paginas.html" target="_parent">Click Aquí</a> </p>
+        <p>Vìnculo utilizando el target _top: sobre la misma ventana/pagina en donde se hace Click  <a href="paginas.html" target="_top">Click Aquí</a> </p>
+        <h3 style="font-size:12px;font-family:verdana">Imagen como enlace en HTML</h3>
+        <a href="paginas.html" target="_blank">  <img src="ProjectWeb/imagenes/iconQ.png" alt="Logo Quibit" style="width:50px;height:50px;border:1"> </a>
+        <a href="paginas.html" target="_blank">  <img src="ProjectWeb/imagenes/btnNew.png" alt="Logo Quibit" style="width:250px;height:40px;border:1"> </a>
+        <h3 style="font-size:12px;font-family:verdana">Botòn como enlace en HTML</h3>
+        <button type="button" name="btnTestLink"  style="background-color:RGBA(1,1,200,0.3);padding: 15px 35px" onclick="document.location = 'paginas.html'">Link to a  New Page</button>
+        <hr>
+        <h1>USO DE TABLAS EN HTML</h1>
+        <p>Ejemplo al utilizar tablas en HTML</p>
+        <p>Las filas se definen por la etiqueta tr, las columnas por la etiqueta th y las celdas con la etiqueta td con la propiedad border de tabla se coloca la linea
+            exrerior</p> <p>Se puede definir un CSS para este objeto como:table, th, td { border: 1px solid gray;border-collapse: collapse;}. </p>
+        <!-- Las filas se definen por la etiqueta tr, las columnas por la etiqueta th y las celdas con la etiqueta td con la propiedad border de tabla se coloca la linea exrerior-->
+        <table id="tipo1" style="width:100%">
+          <caption>Training Selection language</caption>
+          <tr><!-- Aqui se definen el numero de columnas  ue deseo tener en la tabla -->
+            <th>Training Languaje</th>
+            <th>Date Begin</th>
+            <th>Training daily (hour)</th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>04/30/2020</td>
+          <td>6 </td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>04/30/2020</td>
+          <td>6 </td>
+        </tr>
+        <tr>
+          <td>JAVASCRIPT</td>
+          <td>04/30/2020</td>
+          <td>6 </td>
+        </tr>
+        </table>
+        <p>Combinar el contenido de varias celdas. Con el atributo colspan se pueden combinar columnas y filas con rowspan. Ademàs la utilizaciòn de uan etiqueta
+            -div- para cambiar el fondo de la tabla.</p>
+<div class="" style="background-color:black" >
+<table id="tipo8" style="width:100%">
+  <tr><!-- Aqui se definen el numero de columnas  ue deseo tener en la tabla -->
+    <th>Training Languaje</th>
+    <th>Date Begin</th>
+    <th>Training daily (hour)</th>
+</tr>
+  <tr>
+    <td>HTML</td>
+    <td rowspan="3">04/30/2020</td>
+    <td rowspan="3"> 6 </td>
+  </tr>
+<tr>
+  <td>CSS</td>
+</tr>
+<tr>
+  <td>JAVASCRIPT</td>
+</tr>
+</table>
+</div>
+      <h2>LISTAS EN HTML</h2>
+      <table id="tipo1" style="width:100%">
+        <caption><h2>LISTAS Y SUS OPCIONES</h2></caption>
+        <tr><!-- Aqui se definen el numero de columnas  ue deseo tener en la tabla -->
+          <th>Descripcion Lista</th>
+          <th>Ejemplo</th>
+      </tr>
+      <tr>
+        <td>Listas ordenadas y numeradas</td>
+        <td>
+          <ol type="1">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>Listas ordenadas y numeradas con letra mayùscula</td>
+        <td>
+          <ol type="A">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>Listas de descripción HTML: Una lista de descripción es una lista de términos, con una descripción de cada término.</td>
+        <td>
+          <p>La  etiqueta -dl- define la lista de descripción, la etiqueta define el término (nombre) y la etiqueta describe cada término: dt y dd</p>
+        </td>
+      </tr>
+      <tr>
+        <td>Ejempo listas de descripciòn</td>
+        <td>
+          <dl>
+            <dt> <b>Coffee</b> </dt>
+            <dd>- black hot drink</dd>
+            <dt> <b>Milk</b> </dt>
+            <dd>- white cold drink</dd>
+          </dl>
+        </td>
+      </tr>
+      <tr>
+        <td>Control de conteo de listas. Se puede indicar desde donde empieza la numeraciòn</td>
+        <td>
+          <ol start="50">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+          </ol>
+        </td>
+      </tr>
+      </table>
+    </div><!--Cierre div contenedor -->
+
+  </body>
+  <script src="ProjectWeb\codejavascript\code.js"></script>
+</html>>
